@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using monogame_ski_lucas_culhaci.Core.Base;
+using monogame_ski_lucas_culhaci.Core.Facade;
 using monogame_ski_lucas_culhaci.Enums;
 using monogame_ski_lucas_culhaci.Object.Obstacles;
 using monogame_ski_lucas_culhaci.Services.Factory;
@@ -43,6 +45,7 @@ namespace monogame_ski_lucas_culhaci.Services.Manager
 
         public void Update(GameTime gameTime)
         {
+
             double elapsedTime = gameTime.ElapsedGameTime.TotalMilliseconds;
             int direction = 1; // 1 is right, -1 is left
 
@@ -50,12 +53,27 @@ namespace monogame_ski_lucas_culhaci.Services.Manager
 
             for (int i = ActiveObstacles.Count - 1; i >= 0; i--)
             {
-               var obstacle = ActiveObstacles[i];
-               obstacle.ChangeYPosition(-Game1.OBSTACLE_VERTICAL_STEP);
+
+                var movementKeys = new List<Keys> {
+                Keys.Z, Keys.Q, Keys.S, Keys.D,
+                Keys.Up, Keys.Down, Keys.Left, Keys.Right
+            };
+
+                // Background
+                float scrollSpeed;
+
+
+                if (InputFacade.IsAnyKeyDown(movementKeys))
+                    scrollSpeed = Game1.OBSTACLE_VERTICAL_STEP;
+                else
+                    scrollSpeed = Game1.OBSTACLE_VERTICAL_STEP_SLOWED;
+
+                var obstacle = ActiveObstacles[i];
+               obstacle.ChangeYPosition(-scrollSpeed);
 
                 if (obstacle is Snowman snowman)
                 {
-                    if (snowman.Position.X + snowman.Texture.Width >= 720) // Naar links
+                    if (snowman.Position.X + snowman.Texture.Width >= Game1.SCREEN_WIDTH) // Naar links
                         snowman.Direction = -1;
                     else if (snowman.Position.X <= 0) // Naar rechts
                         snowman.Direction = 1;
@@ -98,13 +116,10 @@ namespace monogame_ski_lucas_culhaci.Services.Manager
 
         private void Spawn(ObstacleType type)
         {
-            // TODO: Don't forget to replace these values
-
-            int xPosition = Random.Shared.Next(0, 720);
-            Vector2 position = new Vector2(xPosition, 1080);
+            int xPosition = Random.Shared.Next(0, Game1.SCREEN_WIDTH);
+            Vector2 position = new Vector2(xPosition, Game1.SCREEN_HEIGHT);
 
             ActiveObstacles.Add(_factory.CreateObstacle(type, position));
-    
         }
 
 

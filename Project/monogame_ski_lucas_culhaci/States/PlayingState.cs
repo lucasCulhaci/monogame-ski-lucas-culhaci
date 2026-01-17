@@ -1,5 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using monogame_ski_lucas_culhaci.Core.Facade;
 using monogame_ski_lucas_culhaci.Extensions;
 using monogame_ski_lucas_culhaci.Interface;
 using monogame_ski_lucas_culhaci.Object;
@@ -8,12 +11,9 @@ using monogame_ski_lucas_culhaci.Services;
 using monogame_ski_lucas_culhaci.Services.InputService;
 using monogame_ski_lucas_culhaci.Services.Manager;
 using monogame_ski_lucas_culhaci.States.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace monogame_ski_lucas_culhaci.States
 {
@@ -22,8 +22,11 @@ namespace monogame_ski_lucas_culhaci.States
         private List<Skier> _skiers;
         private bool _spawnEnemies;
         private ObstacleManager _obstacleManager;
+
+        private Texture2D _backgroundTexture;
+        private List<Vector2> _backgroundPositions;
         
-            Game1 context;
+        Game1 context;
 
         public PlayingState(Game1 context, int amountOfSkiers, bool hasEnemies, bool multipleControls) : base(context)
         {
@@ -31,6 +34,8 @@ namespace monogame_ski_lucas_culhaci.States
             _skiers = new();
             _spawnEnemies = hasEnemies;
             _obstacleManager = new ObstacleManager();
+            _backgroundTexture = ContentService.Instance.GetTexture("background");
+            _backgroundPositions = new List<Vector2> { new Vector2(0, 0), new Vector2(0, _backgroundTexture.Height) };
 
             SetupSkiers(amountOfSkiers, multipleControls);
         }
@@ -38,7 +43,12 @@ namespace monogame_ski_lucas_culhaci.States
         public override void Draw(GameTime gameTime)
         {
 
-            if(_spawnEnemies)
+            foreach (var position in _backgroundPositions)
+            {
+                Context._spriteBatch.Draw(_backgroundTexture, position, 1);
+            }
+
+            if (_spawnEnemies)
             {
                 _obstacleManager.Draw(Context._spriteBatch);
             }
@@ -51,9 +61,46 @@ namespace monogame_ski_lucas_culhaci.States
 
         public override void Update(GameTime gameTime)
         {
+
+            var movementKeys = new List<Keys> {
+                Keys.Z, Keys.Q, Keys.S, Keys.D,
+                Keys.Up, Keys.Down, Keys.Left, Keys.Right
+            };
+
+            // Background
+            float scrollSpeed = Game1.BACKGROUND_STEP;
+
+            if (InputFacade.WasKeyJustPressed(Keys.P))
+                Context.ChangeState(new PauseState(context, this));
+
+            // If the user is playing and wants to get back to the menu, he can press 'M'
+            if (InputFacade.WasKeyJustPressed(Keys.M))
+                Context.ChangeState(new MenuState(context));
+
+            if (InputFacade.IsAnyKeyDown(movementKeys))
+                scrollSpeed = Game1.BACKGROUND_STEP;
+            else
+                scrollSpeed = Game1.BACKGROUND_STEP_SLOWED;
+
+            for (int i = 0; i < _backgroundPositions.Count; i++)
+            {
+                // Move the background upwards
+                _backgroundPositions[i] = _backgroundPositions[i] with { Y = _backgroundPositions[i].Y - scrollSpeed };
+
+                if (_backgroundPositions[i].Y <= -_backgroundTexture.Height)
+                {
+                    // Calculate the other index, for example: if the current image is 0, then the other image has the index of 1
+                    int otherIndex = (i == 0) ? 1 : 0;
+
+                    _backgroundPositions[i] = _backgroundPositions[i] with { Y = _backgroundPositions[otherIndex].Y + _backgroundTexture.Height - 10 };
+                }
+            }
+
+            // Skiers
             foreach (var skier in _skiers)
                 skier.Update(gameTime);
-
+            
+            // Enemies
             if(_spawnEnemies)
             {
                 _obstacleManager.Update(gameTime);
@@ -62,9 +109,8 @@ namespace monogame_ski_lucas_culhaci.States
             CheckCollisions();
 
             if (_skiers.All(s => !s.Model.isAlive))
-                Context.ChangeState(new PauseState(context));
+                Context.ChangeState(new GameOverState(context));
         }
-
 
         private void SetupSkiers(int amountOfSkiers, bool multipleControls)
         {
@@ -73,8 +119,8 @@ namespace monogame_ski_lucas_culhaci.States
 
             for(int i = 0; i < amountOfSkiers; i++)
             {
-                // TODO: Wijzig dit naar iets dat iets deftiger werkt
-                Vector2 startPosition = new Vector2(200 + (i * 60), 100);
+                // X POSITION: Screenwidth / 2 + PlayerSpriteWidth + (index * 60 -> used for the next skieer)
+                Vector2 startPosition = new Vector2((Game1.SCREEN_WIDTH) / 2 + 70 + i * 60, 100);
 
                 IPlayerMovementInputService inputService;
 
@@ -93,6 +139,13 @@ namespace monogame_ski_lucas_culhaci.States
                 _skiers.Add(new Skier(skierTexture, startPosition, inputService));
             }
 
+            if (_skiers.Count >= 1)
+            {
+                foreach (var skier in _skiers)
+                {
+                    skier.Sprite.Position = skier.Sprite.Position with { X = skier.Sprite.Position.X - 160 };
+                }
+            }
         }
 
         private void CheckCollisions()
@@ -107,7 +160,7 @@ namespace monogame_ski_lucas_culhaci.States
                     {
                         if (obstacle is Rock)
                         {
-                            skier.Sprite.ChangeYPosition(-80);
+                            skier.Sprite.ChangeYPosition(-200);
                         }
                         else
                         {

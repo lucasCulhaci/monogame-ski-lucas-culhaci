@@ -11,8 +11,6 @@ namespace monogame_ski_lucas_culhaci.States
     public class MenuState(Game1 context) : State(context)
     {
 
-        private bool _isInitialized = false;
-
         public override void Draw(GameTime gameTime)
         {
             Context._spriteBatch.DrawStringInCenter
@@ -43,7 +41,10 @@ namespace monogame_ski_lucas_culhaci.States
             // Vijanden /2 spelers"
             if (InputFacade.WasKeyJustPressed(Keys.D4))
                 StartGame(2, true, true);
-            
+
+            // Secret Gamemode: Rail Riders, rrrrrrrrrrreeeeeeeeee 
+            if (InputFacade.WasKeyJustPressed(Keys.D5))
+                StartGame(10, true, false);
             
         }
 

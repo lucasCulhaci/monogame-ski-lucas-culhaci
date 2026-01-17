@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using monogame_ski_lucas_culhaci.Core.Facade;
+using monogame_ski_lucas_culhaci.States.Base;
 using monogame_ski_lucas_culhaci.Extensions;
 using monogame_ski_lucas_culhaci.Services;
-using monogame_ski_lucas_culhaci.States.Base;
 
 namespace monogame_ski_lucas_culhaci.States
 {
@@ -15,14 +17,15 @@ namespace monogame_ski_lucas_culhaci.States
                 (
                 Context._graphics,
                 ContentService.Instance.GetSpriteFont("game-font"),
-                "Game Over\n" +
-                "Enter om teruygf naar het menu te gaan"
+                "Game Over.\n" +
+                "Enter om terug naar het menu te gaan"
                 );
         }
 
         public override void Update(GameTime gameTime)
         {
-            throw new System.NotImplementedException();
+            if(InputFacade.WasKeyJustPressed(Keys.Enter))
+                Context.ChangeState(new MenuState(context));
         }
     }
 }

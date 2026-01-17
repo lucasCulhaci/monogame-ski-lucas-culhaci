@@ -2,14 +2,10 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using monogame_ski_lucas_culhaci.Core.Facade;
-using monogame_ski_lucas_culhaci.Extensions;
-using monogame_ski_lucas_culhaci.Object;
-using monogame_ski_lucas_culhaci.Object.Sprites;
 using monogame_ski_lucas_culhaci.Services;
 using monogame_ski_lucas_culhaci.States;
 using monogame_ski_lucas_culhaci.States.Base;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+
 
 namespace monogame_ski_lucas_culhaci
 {
@@ -53,23 +49,17 @@ namespace monogame_ski_lucas_culhaci
         public const int SNOWMAN_MAX_SPAWNRATE_INMS = 10_000;
         #endregion
 
+        #region SCREEN
+
+        public const int SCREEN_WIDTH = 720;
+        public const int SCREEN_HEIGHT = 1080;
+
+        #endregion
+
         #endregion
 
         internal GraphicsDeviceManager _graphics;
         internal SpriteBatch _spriteBatch;
-
-        #region TODO: Move thos whole part to PlayingState.cs
-        //internal List<Skier> skiers;
-
-        //internal double _elapsedTimeSinceLastRock;
-        //internal double _elapsedTimeSinceLastTreeTrunk;
-        //internal double _elapsedTimeSinceLastSnowman;
-
-        //internal List<Vector2> _rockPositions;
-        //internal List<Vector2> _treeTrunkPositions;
-        //internal List<Vector2> _snowmanPositions;
-        //internal List<Vector2> _backgroundPositions;
-        #endregion
 
         private State _currentState;
 
@@ -84,8 +74,8 @@ namespace monogame_ski_lucas_culhaci
 
         protected override void Initialize()
         {
-            _graphics.PreferredBackBufferWidth = 720;
-            _graphics.PreferredBackBufferHeight = 1080;
+            _graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
+            _graphics.PreferredBackBufferHeight = SCREEN_HEIGHT;
             _graphics.ApplyChanges();
 
             ContentService.Initialize(this);
@@ -117,9 +107,7 @@ namespace monogame_ski_lucas_culhaci
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
+            GraphicsDevice.Clear(Color.LightGray);
 
             _spriteBatch.Begin();
             _currentState.Draw(gameTime);

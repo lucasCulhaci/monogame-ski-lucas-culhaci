@@ -1,17 +1,42 @@
-# HoGent – Softwareontwerp 2
+# HoGent – Softwareontwerp 2 - Monogame Ski
 
 ## Eindevaluatie – Semester 1 (2025)
 
 Dit is de eindevaluatie voor het vak Softwareontwerp 2, gegeven door Tommy Uytterhaegen.
 
-## Keuzeopdrachten
+Dit project is gemaakt door Lucas Culhaci (202181086), Student Programmeren aan de HOGENT.
 
-Je kiest één van de volgende opdrachten.
+## Hoe speelt u dit spel?
 
-- Ski-game (MonoGame): De opdracht kan je vinden in het mapje [`monogame_ski`](monogame_ski/).
-- Kerstlijstje (MAUI): De opdracht kan je vinden in het mapje [`maui_kerstlijst`](maui_kerstlijst/).
+1. Download de volledige repository.
+2. Open het project in je IDE, gebruik "monogame_ski_lucas_culhaci.csproj".
+3. Amuseer je!
 
-Je mag beide opdrachten uitwerken, maar slechts één opdracht wordt gebruikt voor de evaluatie. Je kiest zelf welke.
+### Mogelijke Errorberichten
+
+> The command "dotnet tool restore" exited with code 1.
+
+![](./Images/errorMesssage-1.png)
+
+##### Hoe los je dit op?
+
+1. Open de map monogame-ski-lucas-culhaci en ga naar de .config map. Indien deze niet zichtbaar is, kun je in de zoekbalk achter het huidige pad \.config typen en vervolgens op "enter" drukken.
+
+![](./Images/path-1.png)
+
+1. Klik met de rechtermuisknop op het bestand dotnet-tools.json.
+
+2. Kies eigenschappen (properties).
+
+3. Onderaan 'Algemeen' zie je een melding staan: "Dit bestand is afkomstig van een andere computer...".
+
+4. Vink het vakje deblokkeren (unblock) aan en klik op "OK".
+
+# Contact
+
+Bij eender welke probleem omtrent dit project kunt u een nieuwe issue aanmaken in deze GitHub-repository, of u kunt contact met mij opnemen via mail: lucas.culhaci@student.hogent.be
+
+---
 
 ## Wat wordt verwacht
 
@@ -31,27 +56,3 @@ Voor de gekozen opdracht:
 De focus van deze opdracht ligt op softwareontwerp.  
 Een verzorgde user interface is een goede oefening en wordt aangemoedigd, maar heeft geen invloed op de score.  
 Forceer geen ontwerppatronen: gebruik wat zinvol en verdedigbaar is.
-
-## Tips
-
-Denk altijd na over waarom je een bepaalde beslissing neemt, wat het gevolg hiervan is en wat de alternatieven zijn.
-
-Bekijk de klassikaal uitgewerkte oefeningen:
-
-- Surfing Pikachu  
-  https://github.com/tommy-uytterhaegen/HoGent/tree/main/2025_S1_MonoGame_Pikachu_03-EindeLes3
-- Joke-app  
-  https://github.com/tommy-uytterhaegen/HoGent/tree/main/2025_S1_Maui_Jokes_03_EindeLes3
-
-## Mondelinge verdediging
-
-Zorg ervoor dat jouw oplossing ten laatste binnen is op 5 januari 2026. Op 8 of 9 januari krijg je dan de kans om jouw ontwerp mondeling te verdedigen. Je kiest zelf een tijdslot van 30 minuten.
-Tijdens deze verdediging verwacht ik dat je aantoont dat jouw oplossing doordacht is en dat je de relevante concepten uit de lessen correct en bewust hebt toegepast.
-
-Ik zal tijdsloten openzetten waaruit je kan kiezen. Hierover volgt nog een bericht.
-
-## Belangrijk
-
-Indien er aanpassingen komen aan deze bestanden die relevant zijn voor de opdracht, wordt dit gecommuniceerd via Chamilo.
-
-Succes.

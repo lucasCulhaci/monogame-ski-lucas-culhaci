@@ -10,8 +10,8 @@ namespace monogame_ski_lucas_culhaci.States
 {
     public class PauseState : State
     {
-        private readonly State _originState;
-        private readonly Texture2D _overlayTexture;
+        private State _originState;
+        private Texture2D _overlayTexture;
 
         public PauseState(Game1 context, State originState) : base(context)
         {

@@ -15,28 +15,26 @@ namespace monogame_ski_lucas_culhaci
 
         #region PLAYER
         // [DEFAULT STEP] > The player IS NOT MOVING (does not press zqsd or arrow keys), vertical movement is slowed
-        internal const int PLAYER_STEP_SLOWED = 1;
+        public const int PLAYER_STEP_SLOWED = 1;
         // [PLAYING STEP] > The player MOVES (ZQSD or ARROW KEYS)
-        internal const int PLAYER_STEP = 3;
+        public const int PLAYER_STEP = 3;
         #endregion
 
         #region BACKGROUND
         // [DEFAULT STEP] > The player IS NOT MOVING (does not press zqsd or arrow keys), vertical movement is slowed
-        internal const int BACKGROUND_STEP_SLOWED = 1;
+        public const int BACKGROUND_STEP_SLOWED = 1;
         // [PLAYING STEP] > The player MOVES (ZQSD or ARROW KEYS)
-        internal const int BACKGROUND_STEP = 3;
+        public const int BACKGROUND_STEP = 3;
         #endregion
 
         #region OBSTACLES
         // [DEFAULT STEP] > The player IS NOT MOVING (does not press zqsd or arrow keys), vertical movement is slowed
-        internal const int OBSTACLE_VERTICAL_STEP_SLOWED = 1;
+        public const int OBSTACLE_VERTICAL_STEP_SLOWED = 1;
         // [PLAYING STEP] > The player MOVES (ZQSD or ARROW KEYS)
-        internal const int OBSTACLE_VERTICAL_STEP = 3;
+        public const int OBSTACLE_VERTICAL_STEP = 3;
 
         // [DEFAULT MOVEMENT VELOCITY] > ROCK
-        internal const int ROCK_KNOCKBACK = 2;
-        // [DEFAULT MOVEMENT VELOCITY] > SNOWMAN
-        internal const int SNOWMAN_HORIZONTAL_STEP = 5;
+        public const int ROCK_KNOCKBACK = 200;
 
         // [SPAWNRATE] > ROCK
         public const int ROCK_MIN_SPAWNRATE_INMS = 500;

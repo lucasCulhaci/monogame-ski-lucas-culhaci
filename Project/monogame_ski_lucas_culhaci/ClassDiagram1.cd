@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="monogame_ski_lucas_culhaci.Services.Factory.ObstacleFactory" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Factory\ObstacleFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Services.InputService.ArrowKeyInputService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Services\InputService\ArrowKeyInputService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Services.InputService.ZqsdInputService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Services\InputService\ZqsdInputService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Services.Manager.ObstacleManager" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAYAAAAAAAgAAAAEACCAAAAAAAAAAAAACAAAAAAE=</HashCode>
+      <FileName>Services\Manager\ObstacleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Services.ContentService" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACAQAAAQAAAAAAAAgBAACAAAAAQAAAAAAAAIA=</HashCode>
+      <FileName>Services\ContentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Object.Models.PlayerModel" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Object\Models\PlayerModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Object.Obstacles.Rock" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object\Obstacles\Rock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Object.Obstacles.Snowman" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object\Obstacles\Snowman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Object.Obstacles.TreeTrunk" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object\Obstacles\TreeTrunk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Object.Sprites.PlayerSprite" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object\Sprites\PlayerSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Object.Skier" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAAgAAAAgAAA=</HashCode>
+      <FileName>Object\Skier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Extensions.SpriteBatchExtensions" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAgAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\SpriteBatchExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.States.Base.State" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>States\Base\State.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.States.GameOverState" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>States\GameOverState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.States.MenuState" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>States\MenuState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.States.PauseState" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQEAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>States\PauseState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.States.PlayingState" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAQEAAAxAAAgAAAAAAAAAABACAAAAAAAAAAAA=</HashCode>
+      <FileName>States\PlayingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Core.Base.Sprite" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAgAAgAgAACAAEAAQAAAAAAAAAKAAAAAAAA=</HashCode>
+      <FileName>Core\Base\Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Core.Facade.ContentFacade" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Facade\ContentFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Core.Facade.InputFacade" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACAAAAAAAAAAAACAAAAAAAAAACAAAQEAAAAA=</HashCode>
+      <FileName>Core\Facade\InputFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="monogame_ski_lucas_culhaci.Game1" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQCAAAAYCgRwAAgAAAAQAgAgAAgAACCIAAAABEABQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="monogame_ski_lucas_culhaci.Interface.IPlayerMovementInputService" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Interface\IPlayerMovementInputService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="monogame_ski_lucas_culhaci.Enums.ObstacleType" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ObstacleType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

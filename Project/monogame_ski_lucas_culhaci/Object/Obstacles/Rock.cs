@@ -9,10 +9,5 @@ using System.Threading.Tasks;
 
 namespace monogame_ski_lucas_culhaci.Object.Obstacles
 {
-    public class Rock(Texture2D texture, Vector2 position) : Sprite(texture, position)
-    {
-
-        
-
-    }
+    public class Rock(Texture2D texture, Vector2 position) : Sprite(texture, position);
 }

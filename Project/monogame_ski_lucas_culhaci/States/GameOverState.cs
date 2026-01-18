@@ -9,10 +9,9 @@ namespace monogame_ski_lucas_culhaci.States
 {
     public class GameOverState(Game1 context) : State(context)
     {
+        
         public override void Draw(GameTime gameTime)
         {
-
-            // TODO: Make a new SpirteBatchExtension that makes the game over look similar to what is in the pdf
             Context._spriteBatch.DrawStringInCenter
                 (
                 Context._graphics,

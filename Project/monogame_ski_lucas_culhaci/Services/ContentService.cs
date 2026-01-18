@@ -14,18 +14,15 @@ namespace monogame_ski_lucas_culhaci.Services
 
         private static ContentService _instance = null;
 
+        //X
         public static ContentService Instance => _instance ?? throw new Exception("Initialize was not called");
 
         private readonly Dictionary<string, Texture2D> _textures;
         private readonly Dictionary<string, SpriteFont> _fonts;
 
-        private static readonly IEnumerable<string> _textureFileNames = new[] { "rock", "skiier", "snowman", "tree-bottom", "background" };
-        private static readonly IEnumerable<string> _fontFileNames = new[] { "game-font" };
+        private readonly IEnumerable<string> _textureFileNames = new[] { "rock", "skiier", "snowman", "tree-bottom", "background" };
+        private readonly IEnumerable<string> _fontFileNames = new[] { "game-font" };
 
-        public static void Initialize(Game game)
-        {
-            _instance = new ContentService(game);
-        }
 
         private ContentService(Game game)
         {
@@ -39,6 +36,11 @@ namespace monogame_ski_lucas_culhaci.Services
             // Load Fonts
             foreach (var item in _fontFileNames)
                 _fonts.Add(item, ContentFacade.LoadSpriteFont(game, item));
+        }
+
+        public static void Initialize(Game game)
+        {
+            _instance = new ContentService(game);
         }
 
         public Texture2D GetTexture(string name) => _textures[name];

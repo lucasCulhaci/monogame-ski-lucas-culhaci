@@ -19,18 +19,14 @@ namespace monogame_ski_lucas_culhaci.States
 {
     public class PlayingState : State
     {
+        private ObstacleManager _obstacleManager;
         private List<Skier> _skiers;
         private bool _spawnEnemies;
-        private ObstacleManager _obstacleManager;
-
         private Texture2D _backgroundTexture;
         private List<Vector2> _backgroundPositions;
         
-        Game1 context;
-
         public PlayingState(Game1 context, int amountOfSkiers, bool hasEnemies, bool multipleControls) : base(context)
         {
-            this.context = context;
             _skiers = new();
             _spawnEnemies = hasEnemies;
             _obstacleManager = new ObstacleManager();
@@ -42,7 +38,6 @@ namespace monogame_ski_lucas_culhaci.States
 
         public override void Draw(GameTime gameTime)
         {
-
             foreach (var position in _backgroundPositions)
             {
                 Context._spriteBatch.Draw(_backgroundTexture, position, 1);
@@ -71,11 +66,11 @@ namespace monogame_ski_lucas_culhaci.States
             float scrollSpeed = Game1.BACKGROUND_STEP;
 
             if (InputFacade.WasKeyJustPressed(Keys.P))
-                Context.ChangeState(new PauseState(context, this));
+                Context.ChangeState(new PauseState(Context, this));
 
             // If the user is playing and wants to get back to the menu, he can press 'M'
             if (InputFacade.WasKeyJustPressed(Keys.M))
-                Context.ChangeState(new MenuState(context));
+                Context.ChangeState(new MenuState(Context));
 
             if (InputFacade.IsAnyKeyDown(movementKeys))
                 scrollSpeed = Game1.BACKGROUND_STEP;
@@ -109,7 +104,7 @@ namespace monogame_ski_lucas_culhaci.States
             CheckCollisions();
 
             if (_skiers.All(s => !s.Model.isAlive))
-                Context.ChangeState(new GameOverState(context));
+                Context.ChangeState(new GameOverState(Context));
         }
 
         private void SetupSkiers(int amountOfSkiers, bool multipleControls)
@@ -160,7 +155,7 @@ namespace monogame_ski_lucas_culhaci.States
                     {
                         if (obstacle is Rock)
                         {
-                            skier.Sprite.ChangeYPosition(-200);
+                            skier.Sprite.ChangeYPosition(-Game1.ROCK_KNOCKBACK);
                         }
                         else
                         {

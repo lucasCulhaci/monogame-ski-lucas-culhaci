@@ -10,7 +10,6 @@ namespace monogame_ski_lucas_culhaci.Extensions
         public static void Draw(this SpriteBatch spriteBatch, Texture2D texture, Vector2 position, float scale)
             => spriteBatch.Draw(texture, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
-
         public static void DrawStringInCenter(this SpriteBatch spriteBatch, GraphicsDeviceManager graphics, SpriteFont spriteFont, string text)
         {
             var position = CalculateCenterPosition(graphics, spriteFont, text);
@@ -27,5 +26,6 @@ namespace monogame_ski_lucas_culhaci.Extensions
                     (graphics.PreferredBackBufferHeight - textSize.Y) * .5F
                 );
         }
+
     }
 }

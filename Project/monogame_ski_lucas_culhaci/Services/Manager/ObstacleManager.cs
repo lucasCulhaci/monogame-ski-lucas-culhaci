@@ -47,13 +47,11 @@ namespace monogame_ski_lucas_culhaci.Services.Manager
         {
 
             double elapsedTime = gameTime.ElapsedGameTime.TotalMilliseconds;
-            int direction = 1; // 1 is right, -1 is left
 
             HandleSpawning(elapsedTime);
 
             for (int i = ActiveObstacles.Count - 1; i >= 0; i--)
             {
-
                 var movementKeys = new List<Keys> {
                 Keys.Z, Keys.Q, Keys.S, Keys.D,
                 Keys.Up, Keys.Down, Keys.Left, Keys.Right
@@ -73,9 +71,9 @@ namespace monogame_ski_lucas_culhaci.Services.Manager
 
                 if (obstacle is Snowman snowman)
                 {
-                    if (snowman.Position.X + snowman.Texture.Width >= Game1.SCREEN_WIDTH) // Naar links
+                    if (snowman.Position.X + snowman.Texture.Width >= Game1.SCREEN_WIDTH) // Go left
                         snowman.Direction = -1;
-                    else if (snowman.Position.X <= 0) // Naar rechts
+                    else if (snowman.Position.X <= 0) // Naar right
                         snowman.Direction = 1;
 
                     obstacle.ChangeXPosition(Game1.OBSTACLE_VERTICAL_STEP * snowman.Direction);

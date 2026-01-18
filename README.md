@@ -40,7 +40,7 @@ Er zit ook een bonus gamemode in dit spel! In de code zelf kun je vinden hoe je 
 
 ##### Hoe los je dit op?
 
-1. Open de map monogame-ski-lucas-culhaci en ga naar de .config map. Indien deze niet zichtbaar is, kun je in de zoekbalk achter het huidige pad \.config typen en vervolgens op "enter" drukken.
+1. Sluit het project en open de map monogame-ski-lucas-culhaci en ga naar de .config map. Indien deze niet zichtbaar is, kun je in de zoekbalk achter het huidige pad \.config typen en vervolgens op "enter" drukken.
 
 ![](./Images/path-1.png)
 
@@ -51,6 +51,8 @@ Er zit ook een bonus gamemode in dit spel! In de code zelf kun je vinden hoe je 
 3. Onderaan 'Algemeen' zie je een melding staan: "Dit bestand is afkomstig van een andere computer...".
 
 4. Vink het vakje deblokkeren (unblock) aan en klik op "OK".
+
+5. Start het project terug op!
 
 # Contact
 

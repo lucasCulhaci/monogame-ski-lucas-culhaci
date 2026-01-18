@@ -13,8 +13,6 @@ namespace monogame_ski_lucas_culhaci.Services
     {
 
         private static ContentService _instance = null;
-
-        //X
         public static ContentService Instance => _instance ?? throw new Exception("Initialize was not called");
 
         private readonly Dictionary<string, Texture2D> _textures;

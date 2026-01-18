@@ -6,11 +6,31 @@ Dit is de eindevaluatie voor het vak Softwareontwerp 2, gegeven door Tommy Uytte
 
 Dit project is gemaakt door Lucas Culhaci (202181086), Student Programmeren aan de HOGENT.
 
-## Hoe speelt u dit spel?
+## Hoe start u dit spel?
 
 1. Download de volledige repository.
 2. Open het project in je IDE, gebruik "monogame_ski_lucas_culhaci.csproj".
 3. Amuseer je!
+
+## Hoe speelt u dit spel?
+
+In dit spel zijn er verschillende gamemodes.
+
+1. (3 Skiiers): 3 skiers die je tegelijk bestuurt in een baan zonder obstakels
+2. (Vijanden /1 skiier) 1 skiër die door de baan glijd met obstakels
+3. (Vijanden /3 skiiers) 3 skiërs die door de baan glijden met obstakels
+4. (Vijanden /2 spelers) 2 spelers met elk hun eigen skiër die door de baan glijd met obstakels
+
+Er zit ook een bonus gamemode in dit spel! In de code zelf kun je vinden hoe je deze gamemode kunt starten!
+
+### Toetsenbord inputs
+
+- Speler 1: ZQSD
+- Speler 2: De pijltoetsen
+- Tijdens het spelen
+  - Spel Pauzeren: P
+  - Terug keren naar de menu: M
+- Spel afsluiten: ESC
 
 ### Mogelijke Errorberichten
 

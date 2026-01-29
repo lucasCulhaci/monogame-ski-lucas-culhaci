@@ -57,24 +57,3 @@ Er zit ook een bonus gamemode in dit spel! In de code zelf kun je vinden hoe je 
 # Contact
 
 Bij eender welke probleem omtrent dit project kunt u een nieuwe issue aanmaken in deze GitHub-repository, of u kunt contact met mij opnemen via mail: lucas.culhaci@student.hogent.be
-
----
-
-## Wat wordt verwacht
-
-Voor de gekozen opdracht:
-
-- Vul het formulier in  
-  https://forms.cloud.microsoft/e/7mbRFJNGB7
-- Plaats op GitHub:
-  - de volledige broncode (MonoGame of MAUI)
-  - Volledig klassendiagram
-- Geef toegang tot de GitHub-repository aan tommy.uytterhaegen@hogent.be
-- Dien de GitHub-link ook in via de opdracht op Chamilo
-- De oplossing moet ten laatste doorgestuurd zijn op 5 januari 2026
-
-## Evaluatie
-
-De focus van deze opdracht ligt op softwareontwerp.  
-Een verzorgde user interface is een goede oefening en wordt aangemoedigd, maar heeft geen invloed op de score.  
-Forceer geen ontwerppatronen: gebruik wat zinvol en verdedigbaar is.
